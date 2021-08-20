@@ -9,8 +9,7 @@ function App() {
     const handleSubmit = e => {
         e.preventDefault()
         const data = new FormData(form.current)
-        console.log(process.env.UPLOAD_URL)
-        fetch(process.env.UPLOAD_URL, {
+        fetch('http://localhost:80', {
             method: 'POST',
             body: data,
         }).then(res => res.json()).then(json => console.log(json))
